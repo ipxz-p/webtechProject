@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Prompt', sans-serif;
+    
+}
+.palm-container{
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.palm-grid-3{
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+}
+.palm-left{
+    grid-column: 1 / span 2;
+}
+.palm-btn-con{
+    display: flex;
+    justify-content: flex-end;
+}
+.palm-text-color{
+    color: red;
+    font-weight: 700;
+}
+.palm-order-img{
+    width: 120px;
+    border-radius: 5px;
+}
+.palm-order-containertext{
+    max-width: 400px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 14px;
+}
+.palm-order-inputnumber{
+    width: 60px;
+    text-align: center;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.palm-order-num-icon{
+    font-weight: 400;
+}
+.custom-tooltip {
+    --bs-tooltip-bg: #303030;
+}
