@@ -1,3 +1,7 @@
+<?php
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,22 +11,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://kit.fontawesome.com/ee33cce78a.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/dist/output.css">
+    <link rel="stylesheet" href="../../assets/style/global.css">
+    
+    
 </head>
 
 <body>
+    <?php
+        include('../../component/navbar.php')
+    ?>
     <div class="">
-        <div class="container mt-4">
-            <div class="palm-grid-3">
-                <div class="palm-left card p-4">
-                    <h2 class="mb-4">ตระกร้าสินค้า</h2>
-                    <div class="card p-2 mb-3 flex-row">
-                        <div class="me-2">
-                            <img class="palm-order-img" src="https://sleepkomfy.com/wp-content/uploads/2019/03/Komfy_IG-July_07.jpg" alt="">
+        <div class="palm-container mt-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-[20px] mt-10 ">
+                <div class="md:col-span-2 border-2 p-3 rounded">
+                    <div class="mb-2 font-medium text-xl">ตระกร้าสินค้า</div>
+                    <div class="flex  max-[350px]:p-[5px] p-2 border rounded">
+                        <div class="max-[350px]:mr-1 mr-2">
+                            <img class="w-[120px] rounded" src="https://sleepkomfy.com/wp-content/uploads/2019/03/Komfy_IG-July_07.jpg" alt="">
                         </div>
-                        <div class="w-100 px-2 d-flex flex-column justify-content-center">
-                            <div class="d-flex w-100 justify-content-between align-items-center">
+                        <div class="w-full px-1 sm:px-2 flex flex-col justify-center">
+                            <div class="flex w-full justify-between items-center">
                                 <div class="fs-5 fw-normal">
                                     หมอน
                                 </div>
@@ -30,14 +39,14 @@
                                     200$
                                 </div>
                             </div>
-                            <div class="palm-order-containertext text-secondary mb-3">
+                            <div class="palm-order-containertext text-gray-500 max-[400px]:max-w-[100px] max-[520px]:max-w-[150px] max-[766px]:max-w-[300px] max-[850px]:max-w-[200px] max-[1024px]:max-w-[300px] max-w-[400px] mb-3">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit qwewqeqweqew
                             </div>
-                            <div class="d-flex align-items-center justify-content-between">
-                                <div class="d-flex align-items-center ">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center ">
                                     <ion-icon name="remove-outline"></ion-icon>
                                     <!-- onkeypress="return (event.charCode !=8 && this.value.length != 2 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57)) -->
-                                    <input class="palm-order-inputnumber mx-2" type="number"  value="1" min="0" onkeypress="return check(this.value)">
+                                    <input class="palm-order-inputnumber mx-1 h-[25px]" type="number"  value="1" min="0" onkeypress="return check(this.value)">
                                     <i class="fa-solid fa-plus palm-order-num-icon"></i>
                                 </div>
                                 
@@ -54,28 +63,28 @@
 
                 </div>
                 <div class="palm-right">
-                    <div class="card p-4">
+                    <div class="border-2 rounded p-4">
                         <div class="text-center">
-                            <h3>สรุปคำสั่งซื้อ</h3>
-                            <div class="d-flex justify-content-between ">
-                                <h6 class="text-secondary mt-3 ">จำนวนทั้งหมด</h6>
-                                <h6 class="text-secondary mt-3">2</h6>
+                            <h3 class="text-xl font-medium">สรุปคำสั่งซื้อ</h3>
+                            <div class="flex justify-between ">
+                                <h6 class="text-gray-500 mt-3 ">จำนวนทั้งหมด</h6>
+                                <h6 class="text-gray-500 mt-3">2</h6>
                             </div>
-                            <div class="d-flex justify-content-between ">
-                                <h6 class="text-secondary mt-3 ">ยอดรวม</h6>
-                                <h6 class="text-secondary mt-3">$1300</h6>
+                            <div class="flex justify-between ">
+                                <h6 class="text-gray-500 mt-3 ">ยอดรวม</h6>
+                                <h6 class="text-gray-500 mt-3">$1300</h6>
                             </div>
-                            <div class="d-flex justify-content-between border-2 border-bottom ">
-                                <h6 class="text-secondary mt-3 ">ส่วนลด</h6>
-                                <h6 class="text-secondary mt-3">$300</h6>
+                            <div class="flex justify-between border-b-3 border-b pb-2 ">
+                                <h6 class="text-gray-500 mt-3 ">ส่วนลด</h6>
+                                <h6 class="text-gray-500 mt-3">$300</h6>
                             </div>
-                            <div class="d-flex justify-content-between ">
-                                <h6 class="text-secondary mt-3 ">ยอดรวมทั้งหมด</h6>
+                            <div class="flex justify-between ">
+                                <h6 class="text-gray-500 mt-3 ">ยอดรวมทั้งหมด</h6>
                                 <h6 class="mt-3 palm-text-color">$1000</h6>
                             </div>
-                            <div class="btn btn-primary mt-4 w-100 bg-re">
+                            <button class="p-2 rounded mt-4 w-full text-white bg-purple-500 hover:bg-purple-600">
                                 ดำเนินการต่อ
-                            </div>
+                            </button>
 
                         </div>
                     </div>

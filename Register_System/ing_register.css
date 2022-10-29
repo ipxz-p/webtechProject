@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700&display=swap');
+:root{
+    --color1 : #645CAA;
+    --color2: #A084CA;
+    --color3: #BFACE0;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    font-family: 'Prompt', sans-serif;
+    color: #535458;
+}
+
+.ing-container{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+a{
+    text-decoration: none;
+    color: var(--color2);
+}
+
+/*ลงทะเบียน input*/
+form .wrapper {
+    width: 480px;
+    background: #fff;
+    padding: 30px;
+}
+
+form .wrapper .ing-input {
+    height: 40px;
+    width: 100%;
+    position: relative;
+}
+
+form .wrapper .ing-input input {
+    height: 100%;
+    width: 100%;
+    border: none;
+    font-size: 17px;
+    border-bottom: 2px solid silver;
+}
+
+
+
+
+
+
+
+.con-ing form .wrapper .ing-input label {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    color: grey;
+    pointer-events: none;
+    transition: all 0.3s ease !important;
+}
+
+.ing-input input:focus~label,
+.ing-input input:valid~label {
+    transform: translateY(-20px);
+    font-size: 15px;
+    color: var(--color2) !important;
+}
+
+.ing-input .underline {
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    bottom: 0;
+}
+.ing-input{
+    margin-bottom: 20px;
+}
+
+.ing-input .underline:before {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    background: var(--color2);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+}
+
+.ing-input input:focus~.underline:before,
+.ing-input input:valid~.underline:before {
+    transform: scaleX(1);
+}
+
+
+
+@media screen and (max-width:800px){
+    form .wrapper{
+        width: 400px;
+    }
+}
+@media screen and (max-width:640px) {
+    .con-ing{
+        flex-direction: column;
+        margin: 10%;
+    }
+    form .wrapper {
+        width: 100%;
+    }
+}
+
+.ing-header, .error{
+    padding-left: 30px;
+}
+
+.ing-header{
+    margin: 2px;
+}
+.ing-btn{
+    display: inline-block;
+    cursor: pointer;
+    transition: all .3s;
+    border: 1px solid var(--color2);
+    border-radius: 10px;
+    padding: 10px;
+    font-size: medium;
+    color: #fff;
+    background-color: var(--color2);
+    margin-left: 30px;
+}
+
+.ing-btn:hover{
+    color: #fff;
+    border: 1px solid var(--color3);
+    background-color: var(--color3);
+}
+
+.ing-con3 p{
+    padding-left: 30px;
+    margin-top: 10px;
+}

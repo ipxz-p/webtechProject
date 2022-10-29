@@ -4,6 +4,7 @@
     --color2: #A084CA;
     --color3: #BFACE0;
 }
+
 *{
     margin: 0;
     padding: 0;
@@ -15,4 +16,7 @@
     width: 100%;
     margin: 0 auto;
     padding: 0 10px;
+}
+input:-webkit-autofill { 
+    -webkit-background-clip: text;
 }

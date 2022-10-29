@@ -1,3 +1,6 @@
+<?php
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,9 +9,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/dist/output.css">
-    <link rel="stylesheet" href="./src/assets/style/global.css">
+    <link rel="stylesheet" href="../assets/style/global.css">
     <link rel="stylesheet" href="style.css">
     <style>
+        a{
+            color: black;
+        }
+        a:hover{
+            color: black;
+        }
         #nav-sidebar{
             transition: all 0.3s;
             transform: translateX(100%);
@@ -25,29 +34,38 @@
             </a>
         </div>
         <div class="flex items-center">
-            <a class="mr-3" href="">
-                <svg width="22" height="22" viewBox="0 0 24 24"><path fill="currentColor" d="M4 22a8 8 0 1 1 16 0h-2a6 6 0 1 0-12 0H4zm8-9c-3.315 0-6-2.685-6-6s2.685-6 6-6s6 2.685 6 6s-2.685 6-6 6zm0-2c2.21 0 4-1.79 4-4s-1.79-4-4-4s-4 1.79-4 4s1.79 4 4 4z"/></svg>
-            </a>
-            <a class="mr-3" href="../landing/search/">
+            <a class="mr-3" href="/src/landing/search/">
             <svg width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 0 0 1.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 0 0-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 0 0 5.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0c.41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5S14 7.01 14 9.5S11.99 14 9.5 14z"/></svg>
             </a>
-            <a class="mr-3" href="">
+            <a class="mr-3" href="/src/landing/order/index.php">
                 <svg width="22" height="22" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M3.977 9.84A2 2 0 0 1 5.971 8h12.058a2 2 0 0 1 1.994 1.84l.803 10A2 2 0 0 1 18.833 22H5.167a2 2 0 0 1-1.993-2.16l.803-10Z"/><path d="M16 11V6a4 4 0 0 0-4-4v0a4 4 0 0 0-4 4v5"/></g></svg>
             </a>
             <a class="mr-3" href="">
                 <svg width="22" height="22" viewBox="0 0 24 24"><path fill="currentColor" d="m12.1 18.55l-.1.1l-.11-.1C7.14 14.24 4 11.39 4 8.5C4 6.5 5.5 5 7.5 5c1.54 0 3.04 1 3.57 2.36h1.86C13.46 6 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5c0 2.89-3.14 5.74-7.9 10.05M16.5 3c-1.74 0-3.41.81-4.5 2.08C10.91 3.81 9.24 3 7.5 3C4.42 3 2 5.41 2 8.5c0 3.77 3.4 6.86 8.55 11.53L12 21.35l1.45-1.32C18.6 15.36 22 12.27 22 8.5C22 5.41 19.58 3 16.5 3Z"/></svg>
             </a>
+            <?php
+                if(!isset($_SESSION['email'])){?>
+                    <a class="mr-3" href="/src/landing/login/">
+                        <svg width="22" height="22" viewBox="0 0 24 24"><path fill="currentColor" d="M4 22a8 8 0 1 1 16 0h-2a6 6 0 1 0-12 0H4zm8-9c-3.315 0-6-2.685-6-6s2.685-6 6-6s6 2.685 6 6s-2.685 6-6 6zm0-2c2.21 0 4-1.79 4-4s-1.79-4-4-4s-4 1.79-4 4s1.79 4 4 4z"/></svg>
+                    </a><?php
+                    
+                }else{?>
+                <div class="mr-3" href="" onclick="logout()">
+                    <svg width="22" height="22" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12h-9.5m7.5 3l3-3l-3-3m-5-2V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h5a2 2 0 0 0 2-2v-1"/></svg>
+                    
+                </div><?php }
+            ?>
             <div class="cursor-pointer">
                 <svg id="nav-ham" width="22" height="22" viewBox="0 0 16 16"><path fill="currentColor" d="M2 3.75A.75.75 0 0 1 2.75 3h10.5a.75.75 0 0 1 0 1.5H2.75A.75.75 0 0 1 2 3.75Zm0 4A.75.75 0 0 1 2.75 7h10.5a.75.75 0 0 1 0 1.5H2.75A.75.75 0 0 1 2 7.75Zm0 4a.75.75 0 0 1 .75-.75h10.5a.75.75 0 0 1 0 1.5H2.75a.75.75 0 0 1-.75-.75Z"/></svg>
             </div>
         </div>
     </nav>
     
-    <div class="fixed top-0 right-0 bg-[#fff] w-[300px] border h-full border-l-gray-300 p-4 test" id="nav-sidebar">
+    <div class="fixed top-0 right-0 bg-[#fff] w-full min-[400px]:w-[300px] border h-full border-l-gray-300 p-4 test z-20" id="nav-sidebar">
         <div class="flex justify-end mb-4">
         <svg class="h-5 w-5 cursor-pointer" id="nav-cross" viewBox="0 0 15 15"><path fill="currentColor" d="M3.64 2.27L7.5 6.13l3.84-3.84A.92.92 0 0 1 12 2a1 1 0 0 1 1 1a.9.9 0 0 1-.27.66L8.84 7.5l3.89 3.89A.9.9 0 0 1 13 12a1 1 0 0 1-1 1a.92.92 0 0 1-.69-.27L7.5 8.87l-3.85 3.85A.92.92 0 0 1 3 13a1 1 0 0 1-1-1a.9.9 0 0 1 .27-.66L6.16 7.5L2.27 3.61A.9.9 0 0 1 2 3a1 1 0 0 1 1-1c.24.003.47.1.64.27Z"/></svg>
         </div>
-        <a href="" class="flex items-center mb-2">
+        <a href="" class="flex items-center mb-4">
             <div class=" bg-cyan-100 p-2 rounded-md mr-2">
                 <svg class="h-6 w-6 text-cyan-400" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="4"><path d="M44 14L24 4L4 14v20l20 10l20-10V14Z"/><path stroke-linecap="round" d="m4 14l20 10m0 20V24m20-10L24 24M34 9L14 19"/></g></svg>
             </div>
@@ -58,7 +76,7 @@
                 </div>
             </div>
         </a>
-        <a href="" class="flex items-center mb-2">
+        <a href="" class="flex items-center mb-4">
             <div class=" bg-yellow-100 p-2 rounded-md mr-2">
             <svg class="h-6 w-6 text-yellow-400" viewBox="0 0 48 48"><g fill="none"><path stroke="currentColor" stroke-linejoin="round" stroke-width="4" d="m6 42l8.674-24.736L31 34.038L6 42Z"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="m23 19l5-5c2.667-2.667 3-5 1-7m0 18l5-5c3.333-3.333 6.667-3.333 10 0"/><path fill="currentColor" d="M20 7a2 2 0 1 0 0-4a2 2 0 0 0 0 4Zm22-1a2 2 0 1 0 0-4a2 2 0 0 0 0 4Zm0 23a2 2 0 1 0 0-4a2 2 0 0 0 0 4Zm-3 9a2 2 0 1 0 0-4a2 2 0 0 0 0 4Z"/></g></svg>
             </div>
@@ -69,7 +87,7 @@
                 </div>
             </div>
         </a>
-        <a href="" class="flex items-center mb-2">
+        <a href="" class="flex items-center mb-4">
             <div class=" bg-indigo-100 p-2 rounded-md mr-2">
             <svg class="h-6 w-6 text-indigo-400" viewBox="0 0 24 24"><path fill="currentColor" d="M6 19h3v-6h6v6h3v-9l-6-4.5L6 10Zm-2 2V9l8-6l8 6v12h-7v-6h-2v6Zm8-8.75Z"/></svg>
             </div>
@@ -80,7 +98,7 @@
                 </div>
             </div>
         </a>
-        <a href="" class="flex items-center mb-2">
+        <a href="" class="flex items-center mb-4">
             <div class=" bg-violet-100 p-2 rounded-md mr-2">
             <svg class="h-6 w-6 text-violet-400" viewBox="0 0 24 24"><path fill="currentColor" d="M7.25 9.925V17.5h8.45l2.55-5.95V9.5h-5.6l.6-3.4v-.6l-1-1ZM12 22q-2.075 0-3.9-.788q-1.825-.787-3.175-2.137q-1.35-1.35-2.137-3.175Q2 14.075 2 12t.788-3.9q.787-1.825 2.137-3.175q1.35-1.35 3.175-2.138Q9.925 2 12 2t3.9.787q1.825.788 3.175 2.138q1.35 1.35 2.137 3.175Q22 9.925 22 12t-.788 3.9q-.787 1.825-2.137 3.175q-1.35 1.35-3.175 2.137Q14.075 22 12 22Zm0-10Zm0 8q3.325 0 5.663-2.337Q20 15.325 20 12t-2.337-5.663Q15.325 4 12 4T6.338 6.337Q4 8.675 4 12t2.338 5.663Q8.675 20 12 20Z"/></svg>
             </div>
@@ -91,7 +109,7 @@
                 </div>
             </div>
         </a>
-        <a href="" class="flex items-center mb-2">
+        <a href="" class="flex items-center">
             <div class=" bg-purple-100 p-2 rounded-md mr-2">
             <svg class="h-6 w-6 text-purple-400" viewBox="0 0 24 24"><path fill="currentColor" d="M7 17h7v-2H7Zm0-4h10v-2H7Zm0-4h10V7H7ZM5 21q-.825 0-1.413-.587Q3 19.825 3 19V5q0-.825.587-1.413Q4.175 3 5 3h14q.825 0 1.413.587Q21 4.175 21 5v14q0 .825-.587 1.413Q19.825 21 19 21Zm0-2h14V5H5v14ZM5 5v14V5Z"/></svg>
             </div>
@@ -103,6 +121,7 @@
             </div>
         </a>
     </div>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         let navham = document.getElementById("nav-ham"),
         cross = document.getElementById("nav-cross"),
@@ -113,6 +132,15 @@
         cross.addEventListener("click", ()=>{
             navsidebar.style.transform = "translateX(100%)"
         })
+        async function logout(){
+            await Swal.fire({
+                title: 'ยินดีด้วย',
+                text: 'ออกจากระบบสำเร็จเเล้ว',
+                icon: 'success',
+                confirmButtonText: 'รับทราบ'
+                })
+            window.location = "/src/component/logout.php"
+        }
     </script>
 </body>
 </html>

@@ -28,10 +28,11 @@
 }
 .palm-order-img{
     width: 120px;
+    height: auto;
     border-radius: 5px;
 }
 .palm-order-containertext{
-    max-width: 400px;
+
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;

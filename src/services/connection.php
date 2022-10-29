@@ -1,6 +1,6 @@
 <?php
     $host = "localhost";
-    $dbname = "test2";
+    $dbname = "webtech_project";
     $user = "root";
     try {
         $con = new PDO("mysql:host=$host;dbname=$dbname", $user, '');
