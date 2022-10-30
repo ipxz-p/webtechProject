@@ -25,7 +25,7 @@
     </style>
 </head>
 <body>
-    <nav class="border border-b-gray-300 px-3 md:px-6 py-2 flex justify-between items-center">
+    <nav class="border border-b-gray-300 px-3 md:px-6 py-2 flex justify-between bg-white items-center">
         <div>
             <a href="/">
             <svg width="100" height="50" viewBox="0 0 142 61" fill="black" xmlns="http://www.w3.org/2000/svg" class="logo-nav">
@@ -50,7 +50,7 @@
                     </a><?php
                     
                 }else{?>
-                <div class="mr-3" href="" onclick="logout()">
+                <div class="mr-3 cursor-pointer" href="" onclick="logout()">
                     <svg width="22" height="22" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12h-9.5m7.5 3l3-3l-3-3m-5-2V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h5a2 2 0 0 0 2-2v-1"/></svg>
                     
                 </div><?php }

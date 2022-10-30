@@ -10,9 +10,10 @@ if(isset($_POST['loginSubmit'])){
     $result = $stmt->fetch();
     if(!empty($result)){
         $_SESSION['email'] = $email;
+        $_SESSION['loginCheck'] = "pass";
         
     }else{
-        $_SESSION['email'] = "err";
+        $_SESSION['loginCheck'] = "err";
     }
     header("location: index.php");
 }

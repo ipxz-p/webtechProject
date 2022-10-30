@@ -19,7 +19,7 @@
             try{
                 $stmt->execute();
                 $_SESSION['email'] = $email;
-            }
+            } 
             catch(Exception $e){
                 throw $e;
             }

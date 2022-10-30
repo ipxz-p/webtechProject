@@ -44,7 +44,7 @@
     </div>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
-        let check = "<?php echo $_SESSION['email']; ?>"
+        let check = "<?php echo $_SESSION['loginCheck']; ?>"
         window.onload = async function() {
             if(check == "err"){
                 Swal.fire({
@@ -53,7 +53,10 @@
                     icon: 'error',
                     confirmButtonText: 'รับทราบ'
                     })
-            }else{
+                    <?= $_SESSION['loginCheck'] = ''; ?>
+                    check = '';
+            }
+            if(check == "pass"){
                 await Swal.fire({
                 title: 'ยินดีด้วย',
                 text: 'เข้าสู่ระบบสำเร็จเเล้ว',

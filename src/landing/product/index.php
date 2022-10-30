@@ -1,13 +1,5 @@
 <?php
-$host = "localhost";
-$dbname = "test2";
-$user = "root";
-try {
-    $con = new PDO("mysql:host=$host;dbname=$dbname", $user, '');
-} catch (PDOException $e) {
-    echo $e->getMessage();
-}
-
+include_once("../../services/connection.php")
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,33 +20,34 @@ try {
 
 <body>
     <?php
-    // $test =  $_GET['id'];
-    // $stmt = $con->prepare("SELECT * FROM ikea WHERE ID=$test ");
-    // $stmt->execute();
-    // $result = $stmt->fetchAll();
-    // foreach ($result as $row) {
-    //     include('card.php');
-    // }
+    $test =  $_GET['id'];
+    $stmt = $con->prepare("SELECT * FROM product WHERE ID=$test ");
+    $stmt->execute();
+    $result = $stmt->fetchAll();
+    foreach ($result as $row) {
+        echo $row['img1'];
+        // include('card.php');
+    }
     ?>
-    <div class="palm-container">
+    <!-- <div class="palm-container">
         <section class="grid grid-cols-2 md:grid-cols-3 my-[20px] lg:my-[50px]">
-            <!-- รูปภาพ -->
+            
             <div class="col-span-2 hidden md:grid grid-cols-1 md:grid-cols-2 gap-[5px]">
-                <img class=" w-full object-cover" src="../img/<?php echo "test2.webp" ?>" alt="">
-                <img class=" w-full object-cover" src="../img/<?php echo "test2.webp" ?>" alt="">
-                <img class=" w-full object-cover" src="../img/<?php echo "test2.webp" ?>" alt="">
-                <img class=" w-full object-cover" src="../img/<?php echo "test2.webp" ?>" alt="">
+                <img class=" w-full object-cover" src="../../assets/img/" alt="">
+                <img class=" w-full object-cover" src="../img/" alt="">
+                <img class=" w-full object-cover" src="../img/" alt="">
+                <img class=" w-full object-cover" src="../img/" alt="">
             </div>
             <div class="col-span-2 grid grid-cols-1 lg:grid-cols-2 gap-[5px] swiper mySwiper md:hidden">
                 <div class="swiper-wrapper" >
-                    <img class="swiper-slide w-full object-cover" src="../img/<?php echo "test2.webp" ?>" alt="">
-                    <img class="swiper-slide w-full object-cover" src="../img/<?php echo "test2.webp" ?>" alt="">
-                    <img class="swiper-slide w-full object-cover" src="../img/<?php echo "test2.webp" ?>" alt="">
-                    <img class="swiper-slide w-full object-cover" src="../img/<?php echo "test2.webp" ?>" alt="">
+                    <img class="swiper-slide w-full object-cover" src="../img/" alt="">
+                    <img class="swiper-slide w-full object-cover" src="../img/" alt="">
+                    <img class="swiper-slide w-full object-cover" src="../img/" alt="">
+                    <img class="swiper-slide w-full object-cover" src="../img/" alt="">
                 </div>
                 <div class="swiper-pagination"></div>
             </div>
-            <!-- เนื้อหา -->
+            
             <div class="mt-[20px] md:mt-[0px] md:ml-[20px] lg:ml-[40px] col-span-2 md:col-span-1">
                 <div class="font-medium text-xl">
                     BRÄDA แบรดด้า
@@ -85,7 +78,7 @@ try {
                 </div>
             </div>
         </section>
-    </div>
+    </div> -->
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>

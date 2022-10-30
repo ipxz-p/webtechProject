@@ -24,7 +24,7 @@ session_start();
     <div class="">
         <div class="palm-container mt-4">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-[20px] mt-10 ">
-                <div class="md:col-span-2 border-2 p-3 rounded">
+                <div class="md:col-span-2 border-2 p-3 rounded bg-white">
                     <div class="mb-2 font-medium text-xl">ตระกร้าสินค้า</div>
                     <div class="flex  max-[350px]:p-[5px] p-2 border rounded">
                         <div class="max-[350px]:mr-1 mr-2">
@@ -63,7 +63,7 @@ session_start();
 
                 </div>
                 <div class="palm-right">
-                    <div class="border-2 rounded p-4">
+                    <div class="border-2 rounded p-4 bg-white">
                         <div class="text-center">
                             <h3 class="text-xl font-medium">สรุปคำสั่งซื้อ</h3>
                             <div class="flex justify-between ">
