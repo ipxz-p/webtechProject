@@ -38,7 +38,7 @@ include_once("../../../services/connection.php")
     <?php
         include("../../../component/navbar.php");
     ?>
-    <section class="pt-[70px] sm:pt-[80px] pb-4 sm:pb-10">
+    <section class="pt-[70px] md:pt-[80px] pb-4 md:pb-6">
         <div class="palm-container flex flex-col md:flex-row">
             <div class="md:hidden">
                 <img class="rounded" src="/src/assets/img/test1.webp" alt="">

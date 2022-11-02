@@ -45,13 +45,13 @@ session_start();
                             </div>
                             <div class="flex items-center justify-between">
                                 <div class="flex items-center ">
-                                    <ion-icon name="remove-outline"></ion-icon>
+                                    <ion-icon class="cursor-pointer" name="remove-outline"></ion-icon>
                                     <!-- onkeypress="return (event.charCode !=8 && this.value.length != 2 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57)) -->
-                                    <input class="palm-order-inputnumber mx-1 h-[25px] text-center w-[50px]" type="text"  value="1" min="0" onkeypress="return check(this.value)">
-                                    <i class="fa-solid fa-plus palm-order-num-icon"></i>
+                                    <input class="palm-order-inputnumber mx-1 h-[25px] text-xs text-center w-[50px]" type="text"  value="1" min="0" onkeypress="return check(this.value)">
+                                    <i class="fa-solid fa-plus font-thin cursor-pointer"></i>
                                 </div>
                                 
-                                <svg style="cursor: pointer;" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                                <svg id="delete" style="cursor: pointer;" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M3 6h18"></path>
                                     <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path>
                                     <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path>
@@ -99,7 +99,12 @@ session_start();
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        const numInputs = document.querySelectorAll('input[type=number]')
+        tippy('#delete', {
+            content: 'ลบรายการนี้',
+            animation: 'perspective-extreme',
+            placement: 'bottom',
+        });
+        const numInputs = document.querySelectorAll('input[type=text]')
         
         numInputs.forEach(function(input) {
             input.addEventListener('change', function(e) {

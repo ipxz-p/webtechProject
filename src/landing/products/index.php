@@ -17,7 +17,7 @@
         include('../../component/navbar.php')
     ?>
     <div class="pt-[70px] sm:pt-[80px] pb-4 sm:pb-8">
-        <div class="palm-container">
+        <div class="palm-container bg-white p-4 rounded-md">
             test
         </div>
     </div>
