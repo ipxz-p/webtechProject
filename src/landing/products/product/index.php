@@ -73,7 +73,7 @@ include_once("../../../services/connection.php")
                 <div class="text-2xl font-medium py-2 border-b border-slate-300">
                     $<?php echo $cost ?>
                 </div>
-                <div class="bg-white py-2 px-3 mt-3 rounded shadow-sm">
+                <div class="bg-white py-2 px-3 mt-3 rounded shadow-md">
                     <div>
                         <div class="font-medium flex items-center">
                             <svg class="h-5 w-5 mr-1" viewBox="0 0 24 24">
