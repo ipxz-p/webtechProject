@@ -46,7 +46,7 @@ include_once("../../services/connection.php");
         </div>
     </div>
     <?php
-    include("../../component/handleLikeFunc.php")
+    include("../../component/handleCard.php")
     ?>
 </body>
 

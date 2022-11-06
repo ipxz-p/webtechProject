@@ -12,7 +12,7 @@ include_once('./src/services/connection.php')
     <title>Document</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
     <script src="https://kit.fontawesome.com/ee33cce78a.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./dist/output.css">
+    <link rel="prefetch" href="./dist/output.css">
     <link rel="stylesheet" href="./src/assets/style/global.css">
 </head>
 
@@ -122,8 +122,9 @@ include_once('./src/services/connection.php')
             ?>
         </footer>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <?php
-        include('./src/component/handleLikeFunc.php')
+        include('./src/component/handleCard.php')
     ?>
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     <script>

@@ -131,7 +131,7 @@ include_once("../../../services/connection.php")
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
     <?php
-    include("../../../component/handleLikeFunc.php")
+    include("../../../component/handleCard.php")
     ?>
     <script>
         var swiper = new Swiper(".mySwiper", {
