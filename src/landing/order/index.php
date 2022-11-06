@@ -29,11 +29,11 @@ include_once('../../services/connection.php');
                     <div class="border-2 p-3 rounded bg-white">
                         <div class=" font-medium text-xl">ตะกร้าสินค้า</div>
                         <?php
-                        $q = $con->prepare("SELECT SUM(cost * number) FROM cart");
-                        $q->execute();
-                        $sum = $q->fetchAll();
                         if (isset($_SESSION['email'])) {
                             $email = $_SESSION['email'];
+                            $q = $con->prepare("SELECT SUM(cost * number) FROM cart WHERE user_email=?");
+                            $q->execute([$email]);
+                            $sum = $q->fetchAll();
                         }
                         $stmt = $con->prepare("SELECT * FROM cart WHERE EXISTS (SELECT id FROM product WHERE cart.product_id = product.id and cart.user_email = ?)");
                         if (isset($_SESSION['email'])) {
@@ -69,7 +69,7 @@ include_once('../../services/connection.php');
                                         <div class="flex items-center ">
                                             <ion-icon onclick="minus(<?php echo $row['product_id'] ?>)" class="cursor-pointer" name="remove-outline"></ion-icon>
                                             <!-- onkeypress="return (event.charCode !=8 && this.value.length != 2 && event.charCode ==0 || (event.charCode >= 48 && event.charCode <= 57)) -->
-                                            <input id="<?php echo $row['product_id']; ?>" class="myinput palm-order-inputnumber mx-1 h-[25px] text-xs text-center w-[50px]" type="text" value="<?php echo $row['number'] ?>" oninput="inputNum(<?php echo $row['product_id']; ?>, this.value)" maxlength="3" >
+                                            <input id="<?php echo $row['product_id']; ?>" class="myinput palm-order-inputnumber mx-1 h-[25px] text-xs text-center w-[50px]" type="text" value="<?php echo $row['number'] ?>" oninput="inputNum(<?php echo $row['product_id']; ?>, this.value)" maxlength="2" >
                                             <i onclick="plus(<?php echo $row['product_id']; ?>)" class="fa-solid fa-plus font-thin cursor-pointer"></i>
                                         </div>
                                         <div onclick="deleteBt(<?php echo $row['product_id']; ?>)" class="">
@@ -100,8 +100,12 @@ include_once('../../services/connection.php');
                             <div class="flex justify-between ">
                                 <h6 class="text-gray-500 mt-3 ">ยอดรวม</h6>
                                 <h6 class="text-gray-500 mt-3">$<span id="amount"><?php
-                                foreach ($sum as $row){
-                                    echo $row['0'];
+                                if($stmt->rowCount()==0){
+                                    echo 0;
+                                }else{
+                                    foreach ($sum as $row){
+                                        echo $row['0'];
+                                    }
                                 }
                                 ?></span></h6>
                             </div>
@@ -112,8 +116,12 @@ include_once('../../services/connection.php');
                             <div class="flex justify-between ">
                                 <h6 class="text-gray-500 mt-3 ">ยอดรวมทั้งหมด</h6>
                                 <h6 class="mt-3 palm-text-color">$<span id="sumCost"><?php
-                                foreach ($sum as $row){
-                                    echo $row['0'];
+                                if($stmt->rowCount()==0){
+                                    echo 0;
+                                }else{
+                                    foreach ($sum as $row){
+                                        echo $row['0'];
+                                    }
                                 }
                                 ?></span></h6>
                             </div>

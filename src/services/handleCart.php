@@ -8,8 +8,11 @@
     $img1 = $_POST["img"];
     $des = $_POST["des"];
     // $sql = "INSERT INTO `cart`(`product_id`, `user_email`, `number`, `cost`, `name`, `img1`, `des`) VALUES ($id,$email,'1',$cost,$name,$img1,$des)";
+    $stmt = $con->prepare("SELECT `product_id`, `user_email` FROM `cart` WHERE product_id=$id and user_email='$email' ");
+    $stmt->execute();
+    if($stmt->rowCount() == 0){
     $sql = "INSERT INTO `cart`(`product_id`, `user_email`, `number`, `cost`, `name`, `img1`, `des`) VALUES ($id,?,'1',?, ?,?, ?)";
     $stmt = $con->prepare($sql);
     $stmt->execute([$email, $cost, $name,$img1,$des]);
-    
+    }
 ?>

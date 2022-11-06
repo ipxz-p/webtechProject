@@ -1,7 +1,6 @@
 <?php
-
+    include("../../services/connection.php")
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -107,6 +106,9 @@
     <h1>ห้องตัวอย่าง</h1>
     <div class="container">
         <?php
+        $stmt = $con->prepare("SELECT * FROM room_db");
+        $stmt->execute();
+        $result = $stmt->fetchAll();
         foreach ($result as $row) {
             if (intval($row['id']) % 2 == 0 or intval($row['id']) == 5) { //2คอมลัม == 1 or intval($row['id'])== 2
         ?> <div class='image2row image'>

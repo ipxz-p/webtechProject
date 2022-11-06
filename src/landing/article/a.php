@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="mind_style.css">
     <title>ห้องตัวอย่าง</title>
-
+    <link rel="stylesheet" href="/dist/output.css">
+    <link rel="stylesheet" href="/src/assets/style/global.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700&display=swap');
 

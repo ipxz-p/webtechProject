@@ -10,6 +10,9 @@
     <title>Document</title>
     <link rel="stylesheet" href="/dist/output.css">
     <link rel="stylesheet" href="/src/assets/style/global.css">
+    <style>
+        
+    </style>
 </head>
 <body>
     <?php
@@ -21,6 +24,23 @@
                 <div class="text-center font-medium text-xl
                 ">
                     ห้องตัวอย่าง
+                </div>
+                <div class="grid gap-[8px] grid-cols-1 min-[450px]:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mt-2 bg-white">
+                    <?php
+                        $stmt = $con->prepare("SELECT * FROM room_db");
+                        $stmt->execute();
+                        $result = $stmt->fetchAll();
+                        foreach ($result as $row){ 
+                            if($row['id'] % 2 ==0){ ?>
+                                <img class="h-full row-span-2 rounded" src="../../assets/img/<?php echo $row['img1']; ?>" alt="">
+                                <?php
+                            }else{ ?>
+                                <img class="h-full rounded" src="../../assets/img/<?php echo $row['img1']; ?>" alt="">
+                                <?php
+                            }
+                            
+                        }
+                    ?>
                 </div>
             </div>
         </div>

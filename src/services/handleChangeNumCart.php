@@ -7,8 +7,8 @@
     $sql = "UPDATE `cart` SET number = $num WHERE user_email = ? and product_id = $id";
     $stmt = $con->prepare($sql);
     $stmt->execute([$email]);
-    $q = $con->prepare("SELECT SUM(cost * number) FROM cart");
-    $q->execute();
+    $q = $con->prepare("SELECT SUM(cost * number) FROM cart WHERE user_email=?");
+    $q->execute([$email]);
     $sum = $q->fetchAll();
     foreach($sum as $row){
         echo $row['0'];

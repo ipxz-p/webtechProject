@@ -21,11 +21,17 @@ include_once('./src/services/connection.php')
         <?php
         include('./src/component/navbar.php')
         ?>
-        <div class="pt-[70px] sm:pt-[80px]">
-
-            <section class=" palm-container">
-                <img class="w-full" src="./src/assets/img/supersale.png" alt="">
-            </section>
+        <div class="pt-[50px] sm:pt-[52px]">
+        <section class="">
+            <div class="swiper homeSwiper">
+                <div class="swiper-wrapper">
+                    <img class="swiper-slide w-full " src="./src/assets/img/Ing1.png" alt="">
+                    <img class="swiper-slide w-full " src="./src/assets/img/Ing2.png" alt="">
+                </div>
+                <div class="swiper-button-next bg-black/[0.3] px-4 rounded-l-md text-white right-0"></div>
+                <div class="swiper-button-prev bg-black/[0.3] px-4 rounded-r-md text-white left-0"></div>
+            </div>
+        </section>
             <section class="palm-container">
                 <div class="swiper mySwiper h-full mt-4 p-4 bg-white rounded-md">
                     <div class="flex justify-between items-center">
@@ -128,6 +134,23 @@ include_once('./src/services/connection.php')
     ?>
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     <script>
+        var swiper = new Swiper(".homeSwiper", {
+            slidesPerView: 1,
+            
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            loop: true,
+        });
         var swiper = new Swiper(".mySwiper", {
             slidesPerView: 1,
             spaceBetween: 8,
