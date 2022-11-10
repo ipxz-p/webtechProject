@@ -4,6 +4,7 @@ session_start();
 if(isset($_POST['loginSubmit'])){
     $email = $_POST['floating_email'];
     $password = $_POST['floating_password'];
+    $password = hash('sha512', $password);
     // ตรวจสอบว่าอีเมลซ้ำไหม
     $stmt = $con->prepare("SELECT * FROM user WHERE email=? and password=?");
     $stmt->execute([$email, $password]);

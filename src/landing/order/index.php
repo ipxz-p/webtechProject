@@ -95,7 +95,7 @@ include_once('../../services/connection.php');
                             <h3 class="text-xl font-medium">สรุปคำสั่งซื้อ</h3>
                             <div class="flex justify-between ">
                                 <h6 class="text-gray-500 mt-3 ">จำนวนทั้งหมด</h6>
-                                <h6 class="text-gray-500 mt-3"><?php echo $stmt->rowCount(); ?></h6>
+                                <h6 class="text-gray-500 mt-3"><?php echo $stmt->rowCount(); $_SESSION['numOfOrder'] = $stmt->rowCount(); ?></h6>
                             </div>
                             <div class="flex justify-between ">
                                 <h6 class="text-gray-500 mt-3 ">ยอดรวม</h6>
@@ -125,7 +125,7 @@ include_once('../../services/connection.php');
                                 }
                                 ?></span></h6>
                             </div>
-                            <button class="transition duration-300 p-2 rounded mt-4 w-full text-white bg-purple-500 hover:bg-purple-400">
+                            <button onclick="confirm()" class="transition duration-300 p-2 rounded mt-4 w-full text-white bg-purple-500 hover:bg-purple-400">
                                 ดำเนินการต่อ
                             </button>
 
@@ -138,15 +138,26 @@ include_once('../../services/connection.php');
     <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         tippy('#delete', {
             content: 'ลบรายการนี้',
             animation: 'perspective-extreme',
             placement: 'bottom',
         });
-
+        function confirm(){
+            if(<?php echo $stmt->rowCount(); ?> == 0){
+                Swal.fire({
+                    title: 'เกิดข้อผิดพลาด',
+                    text: 'โปรดเลือกสินค้าอย่างน้อย 1 ชิ้น',
+                    icon: 'error',
+                    confirmButtonText: 'รับทราบ'
+                    })
+            }else{
+                window.location.href = "/src/landing/address/"
+            }
+        }
         function deleteBt(id) {
             $.ajax({
                 url: "/src/services/handleDeleteCart.php",

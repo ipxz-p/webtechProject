@@ -13,6 +13,7 @@
             $_SESSION['emailUsed'] = "true";
         }
         else{
+            $password = hash('sha512', $password);
             $_SESSION['emailUsed'] = "false";
             $sql = "INSERT INTO `user`(`username`, `email`, `password`) VALUES ('$username','$email','$password')";
             $stmt = $con->prepare($sql);

@@ -22,16 +22,17 @@ include_once('./src/services/connection.php')
         include('./src/component/navbar.php')
         ?>
         <div class="pt-[50px] sm:pt-[52px]">
-        <section class="">
-            <div class="swiper homeSwiper">
-                <div class="swiper-wrapper">
-                    <img class="swiper-slide w-full " src="./src/assets/img/Ing1.png" alt="">
-                    <img class="swiper-slide w-full " src="./src/assets/img/Ing2.png" alt="">
+            <section class="">
+                
+                <div class="swiper homeSwiper">
+                    <div class="swiper-wrapper">
+                        <img class="swiper-slide w-full " src="./src/assets/img/Ing1.png" alt="">
+                        <img class="swiper-slide w-full " src="./src/assets/img/Ing2.png" alt="">
+                    </div>
+                    <div class="swiper-button-next bg-black/[0.3] px-4 rounded-l-md text-white right-0"></div>
+                    <div class="swiper-button-prev bg-black/[0.3] px-4 rounded-r-md text-white left-0"></div>
                 </div>
-                <div class="swiper-button-next bg-black/[0.3] px-4 rounded-l-md text-white right-0"></div>
-                <div class="swiper-button-prev bg-black/[0.3] px-4 rounded-r-md text-white left-0"></div>
-            </div>
-        </section>
+            </section>
             <section class="palm-container">
                 <div class="swiper mySwiper h-full mt-4 p-4 bg-white rounded-md">
                     <div class="flex justify-between items-center">
@@ -118,9 +119,9 @@ include_once('./src/services/connection.php')
                     <div class="swiper-button-prev bg-black/[0.3] px-4 rounded-r-md text-white left-0"></div>
                 </div>
             </section>
-            
 
-        
+
+
         </div>
         <footer>
             <?php
@@ -130,19 +131,19 @@ include_once('./src/services/connection.php')
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <?php
-        include('./src/component/handleCard.php')
+    include('./src/component/handleCard.php')
     ?>
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     <script>
         var swiper = new Swiper(".homeSwiper", {
             slidesPerView: 1,
-            
+
             pagination: {
                 el: ".swiper-pagination",
                 clickable: true,
             },
             autoplay: {
-                delay: 3000,
+                delay: 4000,
                 disableOnInteraction: false,
             },
             navigation: {

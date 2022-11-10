@@ -5,7 +5,7 @@
         </svg>
         <p class="text-center mt-1">สินค้าคุณภาพดี จัดส่งรวดเร็ว บริการหลังการขายยอดเยี่ยม</p>
     </div>
-    <div class="bg-black text-gray-400 text-center py-2">
+    <div class="bg-purple-400 text-white text-center py-2">
         Copyright ©2022 Goodygoods. Designed By Goodyteam
     </div>
 </div>
