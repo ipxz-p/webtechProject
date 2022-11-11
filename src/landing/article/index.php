@@ -1,3 +1,7 @@
+<?php
+include_once('../../services/connection.php');
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -155,6 +159,9 @@
             </div>
         </div>
     </div>
+    <?php
+        include("../../component/footer.php")
+    ?>
 </body>
 
 </html>

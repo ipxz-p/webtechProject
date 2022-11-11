@@ -14,8 +14,7 @@ include_once("../../../services/connection.php")
     <link rel="stylesheet" href="/src/assets/style/global.css">
     <link rel="stylesheet" href="/dist/output.css">
     <style>
-        
-        .p-4{
+        .p-4 {
             padding: 1rem;
         }
     </style>
@@ -27,52 +26,52 @@ include_once("../../../services/connection.php")
     $stmt = $con->prepare("SELECT * FROM product WHERE ID=$test ");
     $stmt->execute();
     $result = $stmt->fetchAll();
-    $name = '';
-    $des = '';
-    $cost = '';
     foreach ($result as $row) {
         $name = $row['name'];
+        $des_name = $row['des_name'];
+        $img1 = $row['img1'];
+        $img2 = $row['img2'];
+        $img3 = $row['img3'];
+        $img4 = $row['img4'];
         $des = $row['des'];
         $cost = $row['cost'];
+        $material = $row['material'];
+        $maintain = $row['maintain'];
+        $size = $row['size'];
     }
     ?>
     <?php
-        include("../../../component/navbar.php");
+    include("../../../component/navbar.php");
     ?>
     <section class="pt-[70px] md:pt-[80px] pb-4 md:pb-6">
-        <div class="palm-container flex flex-col md:flex-row">
-            <div class="md:hidden">
-                <img class="rounded" src="/src/assets/img/test1.webp" alt="">
+        <div class="palm-container flex flex-col lg:flex-row">
+            <div class="lg:hidden">
+                <img class="rounded w-full" src="/src/assets/img/<?php echo $img4 ?>" alt="">
             </div>
-            <div class="hidden md:grid grid-cols-2 col-span-2 gap-[8px] w-full">
+            <div class="hidden lg:grid grid-cols-2 col-span-2 gap-[8px] w-full">
                 <div class="">
-                    <img class="rounded" src="/src/assets/img/test1.webp" alt="">
+                    <img class="rounded" src="/src/assets/img/<?php echo $img4 ?>" alt="">
                 </div>
                 <div class="">
-                    <img class="rounded" src="/src/assets/img/test1.webp" alt="">
+                    <img class="rounded" src="/src/assets/img/<?php echo $img2 ?>" alt="">
                 </div>
                 <div class="">
-                    <img class="rounded" src="/src/assets/img/test1.webp" alt="">
+                    <img class="rounded" src="/src/assets/img/<?php echo $img3 ?>" alt="">
                 </div>
                 <div class="">
-                    <img class="rounded" src="/src/assets/img/test1.webp" alt="">
+                    <img class="rounded" src="/src/assets/img/<?php echo $img1 ?>" alt="">
                 </div>
-                <div class="">
-                    <img class="rounded" src="/src/assets/img/test1.webp" alt="">
-                </div>
-                <div class="">
-                    <img class="rounded" src="/src/assets/img/test1.webp" alt="">
-                </div>
+
             </div>
-            <div class="w-full md:min-w-[275px] md:max-w-[275px] w-full mt-[10px] md:mt-0 md:ml-4 lg:ml-8">
+            <div class="w-full lg:min-w-[275px] lg:max-w-[275px] w-full mt-[10px] lg:mt-0 lg:ml-4 lg:ml-8">
                 <div class=" text-lg font-medium w-full ">
                     <?php echo $name ?>
                 </div>
                 <div class="text-gray-500 text-sm">
-                    <?php echo $des ?>
+                    <?php echo $des_name ?>
                 </div>
                 <div class="text-2xl font-medium py-2 border-b border-slate-300">
-                    $<?php echo $cost ?>
+                    ฿<?php echo number_format($cost) ?>
                 </div>
                 <div class="bg-white py-2 px-3 mt-3 rounded shadow-md">
                     <div>
@@ -84,7 +83,7 @@ include_once("../../../services/connection.php")
                             รายละเอียด
                         </div>
                         <div class="text-sm text-gray-400 border-b-2 pb-1">
-                            รถเข็นโครงสร้างแข็งแรงพร้อมล้อเลื่อน 4 ล้อ ย้ายไปมาได้สะดวก และขนาดเล็กกะทัดรัด
+                            <?php echo $des ?>
                         </div>
                     </div>
                     <div class="mt-1">
@@ -97,7 +96,7 @@ include_once("../../../services/connection.php")
                             </svg> วัสดุ
                         </div>
                         <div class="text-sm text-gray-400 border-b-2 pb-1">
-                            เหล็ก, เคลือบผงอิพ็อกซี
+                            <?php echo $material ?>
                         </div>
                     </div>
                     <div class="mt-1">
@@ -106,18 +105,27 @@ include_once("../../../services/connection.php")
                                 <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11.42 15.17L17.25 21A2.652 2.652 0 0 0 21 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 1 1-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 0 0 4.486-6.336l-3.276 3.277a3.004 3.004 0 0 1-2.25-2.25l3.276-3.276a4.5 4.5 0 0 0-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008Z" />
                             </svg> การดูเเลรักษา
                         </div>
+                        <div class="text-sm text-gray-400 border-b-2 pb-1">
+                            <?php echo $maintain ?>
+                        </div>
+                    </div>
+                    <div class="mt-1">
+                        <div class="font-medium flex items-center">
+                        <svg class="h-5 w-5 mr-1" viewBox="0 0 512 512"><path fill="currentColor" d="m404.687 212.686l-50.51 50.51l-105.372-105.373l50.841-50.843L272.666 80H80v192l27.313 27.314l50.982-50.981l105.372 105.373l-51.313 51.313L239.333 432H432V240ZM400 400H262.627l46.3-46.294l-150.632-150.628L112 249.373V112h137.373l-45.823 45.823l150.627 150.628L400 262.627Z"/></svg>
+                            ขนาดสินค้า
+                        </div>
                         <div class="text-sm text-gray-400">
-                            เหล็ก, เคลือบผงอิพ็อกซี
+                            <?php echo $size ?>
                         </div>
                     </div>
                 </div>
-                <div class="flex justify-between items-center mt-3">
-                    <button onclick="addToCart(event, <?php echo $row['id']; ?>, <?php echo $row['cost']; ?>, '<?php echo $row['name']; ?>', '<?php echo $row['img1']; ?>', '<?php echo $row['des']; ?>')" class="transition duration-500 bg-purple-500 hover:bg-purple-400 text-center text-white w-full mr-3 py-2 rounded-3xl">
+                <div class="flex justify-between items-center mt-6">
+                    <button onclick="addToCart(event, <?php echo $row['id']; ?>, <?php echo $row['cost']; ?>, '<?php echo $row['name']; ?>', '<?php echo $row['img4']; ?>', '<?php echo $row['des']; ?>')" class="transition duration-500 bg-purple-500 hover:bg-purple-400 text-center text-white w-full mr-3 py-2 rounded-3xl">
                         ใส่ตะกร้า
                     </button>
                     <!-- <svg class="text-red-500 mt-[4px]" width="22" height="22" viewBox="0 0 16 16"><path fill="currentColor" d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92C0 2.755 1.79 1 4 1z"/></svg> -->
 
-                    <div onclick="addToWishList(event, <?php echo $row['id']; ?>, <?php echo $row['cost']; ?>, '<?php echo $row['name']; ?>', '<?php echo $row['img1']; ?>', '<?php echo $row['des']; ?>')" class="border-2 border-red-500 rounded-3xl p-2 cursor-pointer">
+                    <div onclick="addToWishList(event, <?php echo $row['id']; ?>, <?php echo $row['cost']; ?>, '<?php echo $row['name']; ?>', '<?php echo $row['img4']; ?>', '<?php echo $row['des']; ?>')" class="border-2 border-red-500 rounded-3xl p-2 cursor-pointer">
                         <svg width="22" onclick="like(event)" class="text-red-500" height="22" viewBox="0 0 24 24">
                             <path fill="currentColor" d="m12.1 18.55l-.1.1l-.11-.1C7.14 14.24 4 11.39 4 8.5C4 6.5 5.5 5 7.5 5c1.54 0 3.04 1 3.57 2.36h1.86C13.46 6 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5c0 2.89-3.14 5.74-7.9 10.05M16.5 3c-1.74 0-3.41.81-4.5 2.08C10.91 3.81 9.24 3 7.5 3C4.42 3 2 5.41 2 8.5c0 3.77 3.4 6.86 8.55 11.53L12 21.35l1.45-1.32C18.6 15.36 22 12.27 22 8.5C22 5.41 19.58 3 16.5 3Z" />
                         </svg>

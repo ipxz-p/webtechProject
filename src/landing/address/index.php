@@ -76,7 +76,7 @@ $result = $stmt->fetchAll();
                                             echo 0;
                                         }else{
                                             foreach ($sum as $row){
-                                                echo $row['0'];
+                                                echo number_format($row['0']);
                                             }
                                         }
                                         ?></span></h6>
@@ -92,7 +92,7 @@ $result = $stmt->fetchAll();
                                             echo 0;
                                         }else{
                                             foreach ($sum as $row){
-                                                echo $row['0'];
+                                                echo number_format($row['0']);
                                             }
                                         }
                                         ?></span></h6>

@@ -11,6 +11,6 @@
     $q->execute([$email]);
     $sum = $q->fetchAll();
     foreach($sum as $row){
-        echo $row['0'];
+        echo number_format($row['0']);
     }
 ?>

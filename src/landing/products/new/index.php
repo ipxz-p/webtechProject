@@ -17,7 +17,7 @@ include_once("../../../services/connection.php");
         <?php
         include('../../../component/navbar.php')
         ?>
-        <div class="pt-[60px] sm:pt-[80px] pb-4 sm:pb-10">
+        <div class="pt-[60px] sm:pt-[70px] pb-4 sm:pb-8">
             <section class="palm-container">
                 <div class="swiper mySwiper h-full mt-4 p-4 bg-white rounded-md">
                     <div class="flex justify-between items-center">
@@ -37,6 +37,9 @@ include_once("../../../services/connection.php");
             </section>
         </div>
     </div>
+    <?php
+        include("../../../component/footer.php")
+    ?>
     <?php
         include("../../../component/handleCard.php")
     ?>

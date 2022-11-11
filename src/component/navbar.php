@@ -20,6 +20,11 @@
         #nav-sidebar{
             transition: all 0.3s;
             transform: translateX(100%);
+            -ms-overflow-style: none; 
+            scrollbar-width: none;
+        }
+        #nav-sidebar::-webkit-scrollbar { 
+            display: none;  /* Safari and Chrome */
         }
     </style>
 </head>
@@ -80,12 +85,39 @@
         </div>
     </nav>
     </div>
-    <div class="fixed top-0 right-0 bg-[#fff] w-full min-[400px]:w-[300px] border h-full border-l-gray-300 p-4 test z-[1000]" id="nav-sidebar">
+    <div class="fixed top-0 right-0 bg-[#fff] w-full min-[400px]:w-[300px] border h-full border-l-gray-300 p-4 test z-[1000] overflow-auto" id="nav-sidebar">
         
         <div class="flex justify-end mb-4">
         <svg class="h-5 w-5 cursor-pointer" id="nav-cross" viewBox="0 0 15 15"><path fill="currentColor" d="M3.64 2.27L7.5 6.13l3.84-3.84A.92.92 0 0 1 12 2a1 1 0 0 1 1 1a.9.9 0 0 1-.27.66L8.84 7.5l3.89 3.89A.9.9 0 0 1 13 12a1 1 0 0 1-1 1a.92.92 0 0 1-.69-.27L7.5 8.87l-3.85 3.85A.92.92 0 0 1 3 13a1 1 0 0 1-1-1a.9.9 0 0 1 .27-.66L6.16 7.5L2.27 3.61A.9.9 0 0 1 2 3a1 1 0 0 1 1-1c.24.003.47.1.64.27Z"/></svg>
         </div>
-        <a href="/src/landing/products/" class="flex items-center mb-4 group ">
+        <div id="category" class="flex items-center cursor-pointer select-none">
+            <div class=" bg-sky-100 p-2 rounded-md mr-2">
+                <svg class="h-6 w-6 text-sky-400" viewBox="0 0 24 24"><path fill="currentColor" d="M6.5 11L12 2l5.5 9Zm11 11q-1.875 0-3.188-1.312Q13 19.375 13 17.5q0-1.875 1.312-3.188Q15.625 13 17.5 13q1.875 0 3.188 1.312Q22 15.625 22 17.5q0 1.875-1.312 3.188Q19.375 22 17.5 22ZM3 21.5v-8h8v8ZM17.5 20q1.05 0 1.775-.725Q20 18.55 20 17.5q0-1.05-.725-1.775Q18.55 15 17.5 15q-1.05 0-1.775.725Q15 16.45 15 17.5q0 1.05.725 1.775Q16.45 20 17.5 20ZM5 19.5h4v-4H5ZM10.05 9h3.9L12 5.85ZM12 9Zm-3 6.5Zm8.5 2Z"/></svg>
+            </div>
+            <div class="flex justify-between items-center w-full">
+                <div>
+                    <div class="font-medium text-lg">ประเภท</div>
+                    <div class="text-xs text-gray-500">
+                        เเสดงประเภททั้งหมด
+                    </div>
+                </div>
+                <svg id="iconCategory" class="h-6 w-6 text-sky-400  " viewBox="0 0 24 24"><path fill="currentColor" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6l-6-6l1.41-1.41z"/></svg>
+                
+            </div>
+        </div>
+        <div id="showCategory" class="hidden mt-2 ">
+            <div class="flex flex-col border-l-2 border-l-sky-300 pl-2">
+                <a  href="/src/landing/type/mirror/">กระจกเงา</a>
+                <a class="mt-1" href="/src/landing/type/board/">กระดาน</a>
+                <a class="mt-1" href="/src/landing/type/tree/">กระถางดอกไม้และต้นไม้</a>
+                <a class="mt-1" href="/src/landing/type/box/">กล่องเก็บของและตะกร้า</a>
+                <a class="mt-1" href="/src/landing/type/flower/">ดอกไม้ประดิษฐ์และดอกไม้แห้ง</a>
+                <a class="mt-1" href="/src/landing/type/picture/">รูปภาพและกรอบรูป</a>
+                <a class="mt-1" href="/src/landing/type/incense/">เครื่องหอม</a>
+                <a class="mt-1" href="/src/landing/type/plate/">แจกันและจานชาม</a>
+            </div>
+        </div>
+        <a href="/src/landing/products/" class="flex items-center mb-4 group mt-4">
             <div class=" bg-cyan-100 p-2 rounded-md mr-2">
                 <svg class="h-6 w-6 text-cyan-400" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="4"><path d="M44 14L24 4L4 14v20l20 10l20-10V14Z"/><path stroke-linecap="round" d="m4 14l20 10m0 20V24m20-10L24 24M34 9L14 19"/></g></svg> 
             </div>
@@ -200,6 +232,23 @@
                 })
             window.location = "/src/component/logout.php"
         }
+
+        let category = document.getElementById("category"),
+        showCategory = document.getElementById("showCategory"),
+        iconCategory = document.getElementById("iconCategory")
+        countCat = 1
+
+        category.addEventListener("click", ()=>{
+            if(countCat%2 != 0 ){
+                showCategory.classList.remove("hidden")
+                iconCategory.classList.add("rotate-180")
+
+            }else{
+                showCategory.classList.add("hidden")
+                iconCategory.classList.remove("rotate-180")
+            }
+            countCat++;
+        })
     </script>
 </body>
 </html>
