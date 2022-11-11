@@ -19,7 +19,7 @@ include_once("../../services/connection.php");
         <?php
         include('../../component/navbar.php')
         ?>
-        <div class="pt-[70px] sm:pt-[80px] pb-4 sm:pb-10">
+        <div class="pt-[60px] sm:pt-[70px] pb-4 sm:pb-8">
             <section class="palm-container">
                 <div class="swiper mySwiper h-full mt-4 p-4 bg-white rounded-md">
                     <div class="flex items-center">
@@ -31,7 +31,7 @@ include_once("../../services/connection.php");
                         </svg>
                         <h1 class="text-xl font-medium">ประเภทของสินค้า</h1>
                     </div>
-                    <div class="mt-2 grid grid-cols-1 min-[450px]:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[8px]">
+                    <div class="mt-2 grid grid-cols-1 min-[450px]:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[8px] ">
                         <?php
                         $stmt = $con->prepare("SELECT * FROM product GROUP BY type LIMIT 8");
                         $stmt->execute();
@@ -48,6 +48,7 @@ include_once("../../services/connection.php");
     <?php
     include("../../component/handleCard.php")
     ?>
+
 </body>
 
 </html>

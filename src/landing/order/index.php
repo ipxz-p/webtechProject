@@ -59,7 +59,7 @@ include_once('../../services/connection.php');
                                             <?php echo $row["name"] ?>
                                         </div>
                                         <div class="">
-                                            $<?php echo $row["cost"] ?>
+                                            $<?php echo number_format($row["cost"]) ?>
                                         </div>
                                     </div>
                                     <div class="palm-order-containertext text-gray-500 max-[400px]:max-w-[100px] max-[520px]:max-w-[150px] max-[766px]:max-w-[300px] max-[850px]:max-w-[200px] max-[1024px]:max-w-[300px] max-w-[400px] truncate mb-3">
@@ -104,7 +104,7 @@ include_once('../../services/connection.php');
                                     echo 0;
                                 }else{
                                     foreach ($sum as $row){
-                                        echo $row['0'];
+                                        echo number_format($row['0']);
                                     }
                                 }
                                 ?></span></h6>
@@ -120,7 +120,7 @@ include_once('../../services/connection.php');
                                     echo 0;
                                 }else{
                                     foreach ($sum as $row){
-                                        echo $row['0'];
+                                        echo number_format($row['0']);
                                     }
                                 }
                                 ?></span></h6>

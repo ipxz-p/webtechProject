@@ -55,7 +55,7 @@ include_once('../../services/connection.php');
                                 </div>
                             </div>
                             <div class="flex justify-between items-center">
-                                <div class="palm-order-containertext text-gray-500 max-[400px]:max-w-[100px] max-[520px]:max-w-[150px] max-[766px]:max-w-[300px] max-[850px]:max-w-[200px] max-[1024px]:max-w-[300px] max-w-[400px] truncate">
+                                <div class="palm-order-containertext text-gray-500 max-[400px]:max-w-[100px] max-[520px]:max-w-[150px] max-[766px]:max-w-[300px] max-[850px]:max-w-[200px] max-[1024px]:max-w-[600px] max-w-[700px] truncate">
                                     <?php echo $row["des"] ?>
                                 </div>
                                 <div class="flex items-center justify-between">
