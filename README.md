@@ -1,3 +1,2 @@
 # webTechProject
-รักปามๆๆ
-SELECT * FROM product GROUP BY type LIMIT 8
+This project uses PHP and MySQL on the topic of E-Commerce website

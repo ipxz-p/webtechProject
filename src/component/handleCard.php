@@ -43,6 +43,18 @@
 
         }
         ?>
+<<<<<<< HEAD
+=======
+        $.ajax({
+            url: "/src/services/handleWishList.php",
+            type: "POST",
+            data:{"id": product_id, "cost":cost, "name":name, "img":img, "des":des},
+            success: function(){
+                document.getElementById(`heartFirst-${product_id}`).classList.add("hidden")
+                document.getElementById(`heartSecond-${product_id}`).classList.remove("hidden")
+            }
+        })
+>>>>>>> 2405a6c16d1c21efc1f77f42ce5d8f6c07ccd48f
 
     }
 </script>

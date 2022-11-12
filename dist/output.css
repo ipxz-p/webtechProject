@@ -1109,10 +1109,13 @@ input:checked + .toggle-bg {
   top: 0.75rem;
 }
 
+<<<<<<< HEAD
 .isolate {
   isolation: isolate;
 }
 
+=======
+>>>>>>> 2405a6c16d1c21efc1f77f42ce5d8f6c07ccd48f
 .z-50 {
   z-index: 50;
 }
@@ -1245,10 +1248,13 @@ input:checked + .toggle-bg {
   margin-top: 1.5rem;
 }
 
+<<<<<<< HEAD
 .mt-\[4px\] {
   margin-top: 4px;
 }
 
+=======
+>>>>>>> 2405a6c16d1c21efc1f77f42ce5d8f6c07ccd48f
 .block {
   display: block;
 }
@@ -1389,6 +1395,7 @@ input:checked + .toggle-bg {
   width: 80px;
 }
 
+<<<<<<< HEAD
 .w-\[400px\] {
   width: 400px;
 }
@@ -1397,6 +1404,8 @@ input:checked + .toggle-bg {
   width: 380px;
 }
 
+=======
+>>>>>>> 2405a6c16d1c21efc1f77f42ce5d8f6c07ccd48f
 .max-w-\[400px\] {
   max-width: 400px;
 }
@@ -1570,10 +1579,13 @@ input:checked + .toggle-bg {
   overflow: auto;
 }
 
+<<<<<<< HEAD
 .overflow-hidden {
   overflow: hidden;
 }
 
+=======
+>>>>>>> 2405a6c16d1c21efc1f77f42ce5d8f6c07ccd48f
 .truncate {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1655,6 +1667,14 @@ input:checked + .toggle-bg {
 
 .border-b-2 {
   border-bottom-width: 2px;
+}
+
+.border-l {
+  border-left-width: 1px;
+}
+
+.border-l-2 {
+  border-left-width: 2px;
 }
 
 .border-gray-300 {
@@ -1812,6 +1832,14 @@ input:checked + .toggle-bg {
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
 }
 
+<<<<<<< HEAD
+=======
+.bg-sky-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(224 242 254 / var(--tw-bg-opacity));
+}
+
+>>>>>>> 2405a6c16d1c21efc1f77f42ce5d8f6c07ccd48f
 .bg-opacity-50 {
   --tw-bg-opacity: 0.5;
 }
@@ -2053,11 +2081,14 @@ input:checked + .toggle-bg {
   color: rgb(240 82 82 / var(--tw-text-opacity));
 }
 
+<<<<<<< HEAD
 .text-sky-400 {
   --tw-text-opacity: 1;
   color: rgb(56 189 248 / var(--tw-text-opacity));
 }
 
+=======
+>>>>>>> 2405a6c16d1c21efc1f77f42ce5d8f6c07ccd48f
 .text-cyan-400 {
   --tw-text-opacity: 1;
   color: rgb(34 211 238 / var(--tw-text-opacity));
@@ -2121,6 +2152,18 @@ input:checked + .toggle-bg {
 .text-gray-400 {
   --tw-text-opacity: 1;
   color: rgb(156 163 175 / var(--tw-text-opacity));
+<<<<<<< HEAD
+=======
+}
+
+.text-sky-400 {
+  --tw-text-opacity: 1;
+  color: rgb(56 189 248 / var(--tw-text-opacity));
+}
+
+.underline {
+  text-decoration-line: underline;
+>>>>>>> 2405a6c16d1c21efc1f77f42ce5d8f6c07ccd48f
 }
 
 .opacity-0 {
