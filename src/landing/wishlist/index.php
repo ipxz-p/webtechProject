@@ -54,7 +54,7 @@ include_once('../../services/connection.php');
                                     <?php echo $row["name"] ?>
                                 </div>
                                 <div class="">
-                                    $<?php echo $row["cost"] ?>
+                                    ฿<?php echo $row["cost"] ?>
                                 </div>
                             </div>
                             <div class="flex justify-between items-center">

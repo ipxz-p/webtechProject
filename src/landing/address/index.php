@@ -71,7 +71,7 @@ $result = $stmt->fetchAll();
                                     </div>
                                     <div class="flex justify-between ">
                                         <h6 class="text-gray-500 mt-3 ">ยอดรวม</h6>
-                                        <h6 class="text-gray-500 mt-3">$<span id="amount"><?php
+                                        <h6 class="text-gray-500 mt-3">฿<span id="amount"><?php
                                         if($stmt->rowCount()==0){
                                             echo 0;
                                         }else{
@@ -83,11 +83,11 @@ $result = $stmt->fetchAll();
                                     </div>
                                     <div class="flex justify-between border-b-3 border-b pb-2 ">
                                         <h6 class="text-gray-500 mt-3 ">ส่วนลด</h6>
-                                        <h6 class="text-gray-500 mt-3">$0</h6>
+                                        <h6 class="text-gray-500 mt-3">฿0</h6>
                                     </div>
                                     <div class="flex justify-between ">
                                         <h6 class="text-gray-500 mt-3 ">ยอดรวมทั้งหมด</h6>
-                                        <h6 class="mt-3 ">$<span id="sumCost"><?php
+                                        <h6 class="mt-3 ">฿<span id="sumCost"><?php
                                         if($stmt->rowCount()==0){
                                             echo 0;
                                         }else{

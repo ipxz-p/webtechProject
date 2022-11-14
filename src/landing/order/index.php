@@ -62,7 +62,7 @@ include_once('../../services/connection.php');
                                             <?php echo $row["name"] ?>
                                         </div>
                                         <div class="">
-                                            $<?php echo number_format($row["cost"]) ?>
+                                            ฿<?php echo number_format($row["cost"]) ?>
                                         </div>
                                     </div>
                                     <div class="palm-order-containertext text-gray-500 max-[400px]:max-w-[100px] max-[520px]:max-w-[150px] max-[766px]:max-w-[300px] max-[850px]:max-w-[200px] max-[1024px]:max-w-[300px] max-w-[400px] truncate mb-3">
@@ -102,7 +102,7 @@ include_once('../../services/connection.php');
                             </div>
                             <div class="flex justify-between ">
                                 <h6 class="text-gray-500 mt-3 ">ยอดรวม</h6>
-                                <h6 class="text-gray-500 mt-3">$<span id="amount"><?php
+                                <h6 class="text-gray-500 mt-3">฿<span id="amount"><?php
                                 if($stmt->rowCount()==0){
                                     echo 0;
                                 }else{
@@ -114,11 +114,11 @@ include_once('../../services/connection.php');
                             </div>
                             <div class="flex justify-between border-b-3 border-b pb-2 ">
                                 <h6 class="text-gray-500 mt-3 ">ส่วนลด</h6>
-                                <h6 class="text-gray-500 mt-3">$0</h6>
+                                <h6 class="text-gray-500 mt-3">฿0</h6>
                             </div>
                             <div class="flex justify-between ">
                                 <h6 class="text-gray-500 mt-3 ">ยอดรวมทั้งหมด</h6>
-                                <h6 class="mt-3 palm-text-color">$<span id="sumCost"><?php
+                                <h6 class="mt-3 palm-text-color">฿<span id="sumCost"><?php
                                 if($stmt->rowCount()==0){
                                     echo 0;
                                 }else{
