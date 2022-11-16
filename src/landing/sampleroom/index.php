@@ -31,7 +31,7 @@
                         $stmt->execute();
                         $result = $stmt->fetchAll();
                         foreach ($result as $row){ 
-                            if($row['id'] % 2 ==0){ ?>
+                            if($row['id'] % 2 ==0 && $row['id'] != 20){ ?>
                                 <img class="h-full row-span-2 rounded" src="../../assets/img/<?php echo $row['img1']; ?>" alt="">
                                 <?php
                             }else{ ?>

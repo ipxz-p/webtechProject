@@ -14,7 +14,36 @@ include_once('./src/services/connection.php')
     <script src="https://kit.fontawesome.com/ee33cce78a.js" crossorigin="anonymous"></script>
     <link rel="prefetch" href="./dist/output.css">
     <link rel="stylesheet" href="./src/assets/style/global.css">
-    
+    <style>
+        @media screen and (max-width: 639px) {
+            #imgHome1{
+                content:url("./src/assets/img/Ing1-2.jpg");
+            }
+            #imgHome2{
+                content:url("./src/assets/img/haloween2.png");
+            }
+            #imgHome3{
+                content:url("./src/assets/img/pink1.png");
+            }
+            #imgHome4{
+                content:url("./src/assets/img/christmas1.png");
+            }
+        }
+        @media screen and (min-width: 640px) {
+            #imgHome1{
+                content:url("./src/assets/img/Ing1.png");
+            }
+            #imgHome2{
+                content:url("./src/assets/img/haloween.png");
+            }
+            #imgHome3{
+                content:url("./src/assets/img/pspink.png");
+            }
+            #imgHome4{
+                content:url("./src/assets/img/christmas.png");
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -24,17 +53,13 @@ include_once('./src/services/connection.php')
         ?>
         <div class="pt-[50px] sm:pt-[52px] pb-4 sm:pb-8">
             <section class="">
-                
+
                 <div class="swiper homeSwiper">
                     <div class="swiper-wrapper">
-                        <img class="swiper-slide w-full " src="./src/assets/img/Ing1.png" alt="">
-                        <img class="swiper-slide w-full " src="./src/assets/img/Ing2.png" alt="">
-                        <img class="swiper-slide w-full " src="./src/assets/img/decoration.png" alt="">
-                        <img class="swiper-slide w-full " src="./src/assets/img/haloween.png" alt="">
-                        <img class="swiper-slide w-full " src="./src/assets/img/halloween.png" alt="">
-                        <img class="swiper-slide w-full " src="./src/assets/img/pspink.png" alt="">
-                        <img class="swiper-slide w-full " src="./src/assets/img/christmas.png" alt="">
-
+                        <img class="swiper-slide w-full" id="imgHome1" alt="">
+                        <img class="swiper-slide w-full" id="imgHome2" alt="">
+                        <img class="swiper-slide w-full" id="imgHome3" alt="">
+                        <img class="swiper-slide w-full" id="imgHome4" alt="">
                     </div>
                     <div class="swiper-button-next bg-black/[0.3] px-4 rounded-l-md text-white right-0"></div>
                     <div class="swiper-button-prev bg-black/[0.3] px-4 rounded-r-md text-white left-0"></div>
@@ -74,7 +99,7 @@ include_once('./src/services/connection.php')
                     <div class="swiper-button-prev bg-black/[0.3] px-4 rounded-r-md text-white left-0"></div>
                 </div>
             </section>
-            
+
             <section class="palm-container">
                 <div class="swiper mySwiper h-full mt-4 p-4 bg-white rounded-md">
                     <div class="flex justify-between items-center">
