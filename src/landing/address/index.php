@@ -12,6 +12,10 @@ if (isset($_SESSION['email'])) {
     $stmt->execute([$email]);
 }
 $result = $stmt->fetchAll();
+$countRow = 0;
+foreach ($result as $row) {
+    $countRow++;
+}
 // $query_cart = $con->
 ?>
 <!DOCTYPE html>
@@ -21,11 +25,24 @@ $result = $stmt->fetchAll();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Goody goody</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="/dist/output.css">
     <link rel="stylesheet" href="../../assets/style/global.css">
+    <style>
+        /* Chrome, Safari, Edge, Opera */
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        /* Firefox */
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+    </style>
 </head>
 
 <body>
@@ -55,55 +72,56 @@ $result = $stmt->fetchAll();
                             </div>
                             <div class="has-validation">
                                 <h6 class="text-secondary mt-2">ที่อยู่</h6>
-                                <textarea id="address" rows="4" class="mt-1 w-full rounded border-2 border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" ></textarea>                                <div class="invalid-feedback">
+                                <textarea id="address" rows="4" class="mt-1 w-full rounded border-2 border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
+                                <div class="invalid-feedback">
                                     ใส่ที่อยู่ก่อนไปขั้นตอนถัดไป
                                 </div>
                             </div>
                         </div>
                     </form>
                     <div class="palm-right">
-                            <div class="border-2 rounded p-4 bg-white">
-                                <div class="text-center">
-                                    <h3 class="text-xl font-medium">สรุปคำสั่งซื้อ</h3>
-                                    <div class="flex justify-between ">
-                                        <h6 class="text-gray-500 mt-3 ">จำนวนทั้งหมด</h6>
-                                        <h6 class="text-gray-500 mt-3"><?php echo $stmt->rowCount(); ?></h6>
-                                    </div>
-                                    <div class="flex justify-between ">
-                                        <h6 class="text-gray-500 mt-3 ">ยอดรวม</h6>
-                                        <h6 class="text-gray-500 mt-3">฿<span id="amount"><?php
-                                        if($stmt->rowCount()==0){
-                                            echo 0;
-                                        }else{
-                                            foreach ($sum as $row){
-                                                echo number_format($row['0']);
-                                            }
-                                        }
-                                        ?></span></h6>
-                                    </div>
-                                    <div class="flex justify-between border-b-3 border-b pb-2 ">
-                                        <h6 class="text-gray-500 mt-3 ">ส่วนลด</h6>
-                                        <h6 class="text-gray-500 mt-3">฿0</h6>
-                                    </div>
-                                    <div class="flex justify-between ">
-                                        <h6 class="text-gray-500 mt-3 ">ยอดรวมทั้งหมด</h6>
-                                        <h6 class="mt-3 ">฿<span id="sumCost"><?php
-                                        if($stmt->rowCount()==0){
-                                            echo 0;
-                                        }else{
-                                            foreach ($sum as $row){
-                                                echo number_format($row['0']);
-                                            }
-                                        }
-                                        ?></span></h6>
-                                    </div>
-                                    <button onclick="confirm()" class="transition duration-300 p-2 rounded mt-4 w-full text-white bg-purple-500 hover:bg-purple-400">
-                                        ยืนยันคำสั่งซื้อ
-                                    </button>
-    
+                        <div class="border-2 rounded p-4 bg-white">
+                            <div class="text-center">
+                                <h3 class="text-xl font-medium">สรุปคำสั่งซื้อ</h3>
+                                <div class="flex justify-between ">
+                                    <h6 class="text-gray-500 mt-3 ">จำนวนทั้งหมด</h6>
+                                    <h6 class="text-gray-500 mt-3"><?php echo $countRow; ?></h6>
                                 </div>
+                                <div class="flex justify-between ">
+                                    <h6 class="text-gray-500 mt-3 ">ยอดรวม</h6>
+                                    <h6 class="text-gray-500 mt-3">฿<span id="amount"><?php
+                                                                                        if ($countRow == 0) {
+                                                                                            echo 0;
+                                                                                        } else {
+                                                                                            foreach ($sum as $row) {
+                                                                                                echo number_format($row['0']);
+                                                                                            }
+                                                                                        }
+                                                                                        ?></span></h6>
+                                </div>
+                                <div class="flex justify-between border-b-3 border-b pb-2 ">
+                                    <h6 class="text-gray-500 mt-3 ">ส่วนลด</h6>
+                                    <h6 class="text-gray-500 mt-3">฿0</h6>
+                                </div>
+                                <div class="flex justify-between ">
+                                    <h6 class="text-gray-500 mt-3 ">ยอดรวมทั้งหมด</h6>
+                                    <h6 class="mt-3 ">฿<span id="sumCost"><?php
+                                                                            if ($countRow == 0) {
+                                                                                echo 0;
+                                                                            } else {
+                                                                                foreach ($sum as $row) {
+                                                                                    echo number_format($row['0']);
+                                                                                }
+                                                                            }
+                                                                            ?></span></h6>
+                                </div>
+                                <button onclick="confirm()" class="transition duration-300 p-2 rounded mt-4 w-full text-white bg-purple-500 hover:bg-purple-400">
+                                    ยืนยันคำสั่งซื้อ
+                                </button>
+
                             </div>
                         </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -111,47 +129,44 @@ $result = $stmt->fetchAll();
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
-        async function confirm(){
-            if(document.getElementById("name").value == ""){
+        async function confirm() {
+            if (document.getElementById("name").value == "") {
                 Swal.fire({
                     title: 'เกิดข้อผิดพลาด',
                     text: 'โปรดใส่ชื่อก่อนสั่งซื้อ',
                     icon: 'error',
                     confirmButtonText: 'รับทราบ'
-                    })
-            }
-            else if(document.getElementById("phone").value == ""){
+                })
+            } else if (document.getElementById("phone").value == "") {
                 Swal.fire({
                     title: 'เกิดข้อผิดพลาด',
                     text: 'โปรดใส่เบอร์โทรก่อนสั่งซื้อ',
                     icon: 'error',
                     confirmButtonText: 'รับทราบ'
-                    })
-            }
-            else if(document.getElementById("address").value == ""){
+                })
+            } else if (document.getElementById("address").value == "") {
                 Swal.fire({
                     title: 'เกิดข้อผิดพลาด',
                     text: 'โปรดใส่ที่อยู่ก่อนสั่งซื้อ',
                     icon: 'error',
                     confirmButtonText: 'รับทราบ'
-                    })
-                    
-            }
-            else{
+                })
+
+            } else {
                 await Swal.fire({
                     title: 'ยินดีด้วย',
                     text: 'การสั่งซื้อสำเร็จเเล้ว',
                     icon: 'success',
                     confirmButtonText: 'รับทราบ'
-                    })
+                })
                 $.ajax({
                     url: "/src/services/handleOrder.php",
                     type: "POST",
                     success: function() {
                         window.location.href = "/";
                     }
-            })
-                    
+                })
+
             }
         }
     </script>

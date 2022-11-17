@@ -9,7 +9,7 @@ include_once('./src/services/connection.php')
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Goody goody</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
     <script src="https://kit.fontawesome.com/ee33cce78a.js" crossorigin="anonymous"></script>
     <link rel="prefetch" href="./dist/output.css">

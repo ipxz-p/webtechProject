@@ -36,8 +36,17 @@
                 type: "POST",
                 data:{"id": product_id, "cost":cost, "name":name, "img":img, "des":des},
                 success: function(){
-                    document.getElementById(`heartFirst-${product_id}`).classList.add("hidden")
-                    document.getElementById(`heartSecond-${product_id}`).classList.remove("hidden")
+                    // เเก้บัคหน้าเเรกไอดีซ้ำ
+                    let heartFirst = document.querySelectorAll(`#heartFirst-${product_id}`);
+                    let heartSecond = document.querySelectorAll(`#heartSecond-${product_id}`);
+                    heartFirst.forEach((e)=>{
+                        e.classList.add("hidden")
+                    })
+                    heartSecond.forEach((e)=>{
+                        e.classList.remove("hidden")
+                    })
+                    // document.getElementById(`heartFirst-${product_id}`).classList.add("hidden")
+                    // document.getElementById(`heartSecond-${product_id}`).classList.remove("hidden")
                 }
             }) <?php
 
