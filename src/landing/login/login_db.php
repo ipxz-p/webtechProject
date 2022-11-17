@@ -8,7 +8,7 @@ if(isset($_POST['loginSubmit'])){
     // ตรวจสอบว่าอีเมลซ้ำไหม
     $stmt = $con->prepare("SELECT * FROM user WHERE email=? and password=?");
     $stmt->execute([$email, $password]);
-    $result = $stmt->fetch();
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
     if(!empty($result)){
         $_SESSION['email'] = $email;
         $_SESSION['loginCheck'] = "pass";

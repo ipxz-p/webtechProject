@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <link rel="stylesheet" href="style.css"> -->
-    <title>Document</title>
+    <title>Goody goody</title>
 </head>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700&display=swap');

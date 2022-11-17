@@ -12,7 +12,7 @@ include_once("../../services/connection.php")
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Goody goody</title>
     <script src="https://kit.fontawesome.com/ee33cce78a.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/dist/output.css">
     <link rel="stylesheet" href="style.css">
@@ -40,7 +40,11 @@ include_once("../../services/connection.php")
                     $stmt = $con->prepare("SELECT * FROM product WHERE name LIKE ? OR type LIKE ?");
                     $stmt->execute([$q, $q]);
                     $result = $stmt->fetchAll();
-                    if($stmt->rowCount()==0){?>
+                    $countRow = 0;
+                    foreach($result as $row){
+                        $countRow++;
+                    }
+                    if($countRow==0){?>
                         <div class="min-[450px]:col-span-2 md:col-span-1 md:col-start-2 lg:col-start-2 lg:col-span-2 mt-4">
                             <img class="mx-auto" src="../../assets/img/hugo-231.png" alt="">
                             <div class="text-gray-500 text-center mt-4">ไม่พบข้อมูลที่ต้องการค้นหา</div>
